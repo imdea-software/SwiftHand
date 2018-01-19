@@ -1,7 +1,7 @@
 USAGE
 ------
 export ADK_ROOT=<ADK_ROOT>
-./test.sh <target apk> <mode> <timeout(s)> <random seed> <output dir> [optinos]
+./test.sh <target apk> <mode> <timeout(s)> <random seed> <output dir> [options]
 
 mode: interactive, learningAU (= swift), learningNU, learningA, learningN, learningWithScout, lstar, random
 options:

@@ -1,0 +1,14 @@
+
+
+# ignore results_default
+dist/results_default/
+
+# ignore class
+*.class
+
+# ignore files creates on build
+inst.sh
+test.sh
+*.jar
+pom.properties
+classes.timestamp
