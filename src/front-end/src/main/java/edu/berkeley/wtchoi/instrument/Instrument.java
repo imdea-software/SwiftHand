@@ -61,7 +61,12 @@ public class Instrument {
     }
 
     public static void run(String inputApkFileName, String keystoreFileName, String libJarFileName, Mode mode, boolean flagVerifyPrint){
-        String outputApkFileName = inputApkFileName.replaceFirst(".apk",".modified.apk");
+        File inputApkFile = new File(inputApkFileName);
+        String fileName = inputApkFile.getName();
+        String fileDir = inputApkFile.getParent();
+        String outputApkFileName_tmp = fileName.replaceFirst("\\.apk$",".modified.apk");
+        String outputApkFilePath = fileDir + "/" + outputApkFileName_tmp;
+        String outputApkFileName = outputApkFilePath;
 
         try{
             File tempLibDexFile = File.createTempFile("dronlib",".dex");
