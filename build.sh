@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -gt 0 && $# -lt 4 || $# -gt 4 ]; then
+if [[ $# -gt 0 ]] && ( [[ $# -lt 4 ]] || [[ $# -gt 4 ]] ); then
   echo "Usage: $0 <ADK_ROOT> <JAVA_HOME> <GUAVA_VERSION> <DX_VERSION>"
   echo "Example: $0 \"/Users/wtchoi/Library/Android/sdk\" \"/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home\" \"17.0\" \"21.1.2\""
   exit
@@ -35,7 +35,7 @@ SHARED_PATH="src/shared/target/shared-0.1.jar"
 BACK_END_PATH="src/back-end/target/back-end-0.1-jar-with-dependencies.jar"
 
 
-echo "[build.sh] Generating inst.sh instrumentation script"
+echo "[build.sh] Generating \"${IS}\" instrumentation script"
 
 echo "#!/bin/sh" > ${IS}
 echo "set -x" >> ${IS}
@@ -49,7 +49,7 @@ echo "java -jar ${SWIFT_ROOT}/${FRONT_END_PATH} \$1 ${SWIFT_ROOT}/${KEY_PATH} ${
 chmod 700 ${IS}
 
 
-echo "[build.sh] Generating test.sh GUI testing script"
+echo "[build.sh] Generating \"${TS}\" GUI testing script"
 
 echo "#!/bin/sh" > ${TS}
 echo "set -x" >> ${TS}
